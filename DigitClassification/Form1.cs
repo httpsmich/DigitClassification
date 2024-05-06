@@ -1,5 +1,6 @@
 ﻿using Accord.Math;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DigitClassification
@@ -17,8 +18,8 @@ namespace DigitClassification
             InitializeComponent();
             _drawController = new DrawController(picDigit);
 
-            nClass.Maximum = 10000;
-            nScale.Maximum = 10000;
+            nClass.Maximum = 100000;
+            nScale.Maximum = 100000;
 
             nScale.DataBindings.Add(new Binding("Value", this, "Scale"));
         }
@@ -44,7 +45,8 @@ namespace DigitClassification
             _currentBinaryMatrix.Flatten(vector => _dataSet.Add(DataPoint.Create(vector, nClass.Value.ToString())));
 
         private void btnPredict_Click(object sender, EventArgs e) =>
-            _currentBinaryMatrix.Flatten(vector => lblLabel.Text=$"Label: {_dataSet.Predict(vector, Distance.Euclidean)}");
+           _currentBinaryMatrix.Flatten(vector => lblLabel.Text = $"{_dataSet.Predict(vector, Distance.Euclidean)}");
+
 
         private void nClass_ValueChanged(object sender, EventArgs e)
         {
@@ -60,6 +62,36 @@ namespace DigitClassification
             {
                 nScale.Value = 10000;
             }
+        }
+
+        private void picDigit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picPreview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

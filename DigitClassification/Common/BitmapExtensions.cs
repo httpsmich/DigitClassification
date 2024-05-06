@@ -7,6 +7,7 @@ namespace DigitClassification.Common
     {
         public static double[,] CreateMatrix(this Bitmap image, float threshold)
         {
+            
             var _matrix = new double[image.Width, image.Height];
             for (int y = 0; y < image.Height; y++)
             {

@@ -19,13 +19,14 @@ namespace DigitClassification
             _picDigit = picDigit;
             Clear();
 
-            _drawingPen = new Pen(new SolidBrush(Color.Black), 2);
+            _drawingPen = new Pen(new SolidBrush(Color.Black), 4);
 
             _picDigit.MouseDown += _picDigit_MouseDown;
             _picDigit.MouseMove += _picDigit_MouseMove;
             _picDigit.MouseUp += _picDigit_MouseUp;
         }
-        
+
+
         public void Clear()
         {
             _bitmap = new Bitmap("blank.png");
